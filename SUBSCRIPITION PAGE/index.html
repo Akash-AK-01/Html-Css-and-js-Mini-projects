@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .main {
+            width: 450px;
+            background-color: #f8f9fa;
+            border: 3px solid;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .subscription-container {
+            background-color: #d1d1d1;
+            padding: 20px;
+            margin-top: 10px;
+            margin-right: 20px; /* Add space on the right */
+        }
+        .subscription-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .subscription-container h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .subscription-container p {
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .subscription-container input[type="text"],
+        .subscription-container input[type="email"] {
+            width: calc(100% - 20px); /* Adjust width to account for padding */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            margin-right: 10px; /* Add space on the right */
+        }
+        .subscription-container input[type="checkbox"] {
+            margin-right: 5px;
+            accent-color: #6c757d; /* Dark gray for checkbox */
+        }
+        .subscription-container label {
+            font-size: 14px;
+            color: #333333;
+        }
+        .subscription-container button {
+            width: 99%; /* Adjust width to account for padding */
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-right: 10px; /* Add space on the right */
+        }
+        .margin{
+            background-color: #ffffff;
+        padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>CSS Newsletter</h1>
+        <div class="subscription-container">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
+           <div class="margin">
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email address" required>
+                <div class="margin">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Daily Newsletter</label>
+                </div>
+                </div>
+            </form>
+            <button type="submit">Subscribe</button>
+        </div>
+    </div>
+</body>
+</html>

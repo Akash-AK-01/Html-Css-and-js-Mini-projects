@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .todo-list {
+            background-color: #1c2938;
+            padding: 20px;
+            color: #ffffff;
+            width: 250px;
+            position: relative;
+            min-height: 300px;
+        }
+        .todo-list::before {
+            content: "Todo List";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background-color: #314f72;
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+        .todo-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .todo-item label {
+            flex: 1;
+        }
+        .todo-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #7a8a99;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="todo-list">
+        <div class="todo-item">
+            <input type="checkbox" id="todo-1">
+            <label for="todo-1">Attend meeting</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="todo-2" checked>
+            <label for="todo-2">Complete Assignment</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="todo-3" checked>
+            <label for="todo-3">Finish design for new website</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="todo-4">
+            <label for="todo-4">Go to gym</label>
+        </div>
+    </div>
+</body>
+</html>
