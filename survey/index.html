@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .feedback-form {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        padding-right: 30px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .feedback-form h1 {
+        text-align: center;
+        color: #ff6f3d;
+        font-size: 24px;
+      }
+      .feedback-form label {
+        display: block;
+        margin: 15px 0 5px;
+        font-size: 14px;
+      }
+      .feedback-form input[type="text"],
+      .feedback-form input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .feedback-form .rating {
+        display: flex;gap: 30px;
+
+      }
+      .feedback-form .rating span {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .feedback-form .rating span:hover{
+        color: #ff6f3d;
+      }
+      .feedback-form .checkbox-group {
+        margin: 10px 0;
+      }
+      .feedback-form .checkbox-group label {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      .feedback-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #ff6f3d;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="feedback-form">
+      <h1>ACQUIOS</h1>
+      <div style="display: flex; justify-content: space-between">
+        <div>
+          <label for="first-name">First Name*</label>
+          <input type="text" id="first-name" name="first-name" required />
+        </div>
+        <div>
+          <label for="last-name">Last Name*</label>
+          <input type="text" id="last-name" name="last-name" required />
+        </div>
+      </div>
+
+      <label for="email">Email Address*</label>
+      <input type="email" id="email" name="email" required />
+      <label>How was your overall experience?*</label>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      </div>
+      <div class="checkbox-group" style="display: flex;justify-content: space-between;margin-top: 30px;">
+        <div>
+          <label
+            ><input type="checkbox" name="professional" /> Professional and
+            courteous?</label
+          >
+          <label
+            ><input type="checkbox" name="knowledgeable" />
+            Knowledgeable?</label
+          >
+          <label><input type="checkbox" name="friendly" /> Friendly?</label>
+          <label><input type="checkbox" name="efficient" /> Efficient?</label>
+        </div>
+        <div>
+          <label><input type="checkbox" name="patient" /> Patient?</label>
+          <label
+            ><input type="checkbox" name="warm" /> Warm and respectful?</label
+          >
+          <label
+            ><input type="checkbox" name="clear" /> Clear and direct?</label
+          >
+        </div>
+      </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </body>
+</html>
