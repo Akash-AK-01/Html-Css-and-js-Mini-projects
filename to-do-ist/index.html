@@ -21,6 +21,7 @@
             width: 250px;
             position: relative;
             min-height: 300px;
+ 
         }
         .todo-list::before {
             content: "Todo List";
@@ -30,7 +31,7 @@
             background-color: #314f72;
             color: #ffffff;
             padding: 5px;
-            border-radius: 5px;
+            border-radius: 0px;
             font-size: 17px;
         }
         .todo-item {
@@ -49,10 +50,16 @@
             text-decoration: line-through;
             color: #7a8a99;
         }
+        .one{
+            border: 5rem solid ;
+            border-color: rgb(122, 96, 143);
+
+        }
+       
     </style>
 </head>
 <body>
-    <div class="one"></div>
+    <nav class="one">
     <div class="todo-list">
         <div class="todo-item">
             <input type="checkbox" id="todo-1">
@@ -71,5 +78,6 @@
             <label for="todo-4">Go to gym</label>
         </div>
     </div>
+    <nav>
 </body>
 </html>
