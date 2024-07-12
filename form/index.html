@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Rating Form</title>
+	<style>
+        body {
+	font-family: Arial, sans-serif;
+}
+
+form {
+	width: 50%;
+	margin: 40px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+    background-image: linear-gradient(90deg,rgb(146, 216, 146),white,white,white);
+}
+
+h2 {
+	margin-top: 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px solid #ccc;
+}
+
+td {
+	padding: 10px;
+}
+
+td:first-child {
+	width: 30%;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type="date"] {
+	padding: 10px 5px;
+}
+
+textarea {
+	height: 100px;
+}
+
+    </style>
+</head>
+<body>
+	<form>
+		<h2 style="background-color: green; padding: 15px;">Bank Rating Form</h2>
+		<table>
+			<tr>
+				<td>Company Name</td>
+				<td><input type="text" name="company_name" /></td>
+			</tr>
+			<tr>
+				<td>Financial Institution Name</td>
+				<td><input type="text" name="financial_institution_name" /></td>
+			</tr>
+			<tr>
+				<td >Company Institution</td>
+				<td style="display: flex; justify-content: space-between;gap: 25px;">
+					<input type="text" name="company_institution_1" style="width: 50%;" />
+					<input type="text" name="company_institution_2" style="width: 50%;" />
+				</td>
+			</tr>
+			<tr>
+				<td>Contact person</td>
+				<td><input type="text" name="contact_person" /></td>
+			</tr>
+			<tr>
+				<td>Financial Institution Name</td>
+				<td><input type="text" name="financial_institution_name_2" /></td>
+			</tr>
+			<tr>
+				<td>Contact Phone Number</td>
+				<td><input type="tel" name="contact_phone_number" /></td>
+			</tr>
+			<tr>
+				<td>Name of Account Holder</td>
+				<td style="display: flex; justify-content: space-between;gap: 25px;">
+					<input type="text" name="account_holder_name_1" style="width: 49%;" />
+					<input type="text" name="account_holder_name_2" style="width: 49%;" />
+				</td>
+			</tr>
+			<tr>
+				<td>Date Account Opened</td>
+				<td style="display: flex; justify-content: space-between; gap: 20px;">
+					<input type="number" name="account_opened_date_day" style="width: 33.33%;" />
+					<input type="number" name="account_opened_date_month" style="width: 33.33%;" />
+					<input type="number" name="account_opened_date_year" style="width: 33.33%;" />
+				</td>
+			</tr>
+			<tr>
+				<td>Account Type</td>
+				<td><input type="text" name="account_type" /></td>
+			</tr>
+			<tr>
+				<td>Balance</td>
+				<td><input type="number" name="balance" /></td>
+			</tr>
+			
+			<tr>
+				<td>Additional Information</td>
+				<td><textarea name="additional_info" rows="3"></textarea></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

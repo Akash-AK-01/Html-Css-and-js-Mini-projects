@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <title>Travelista Tours</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      height: 90vh;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .left-side,
+    .right-side {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-side {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      text-align: center;
+      color: rgb(71, 69, 69);
+      font-family: cursive;
+      padding: 20px;
+      border-radius: 10px;
+      top: -12px;
+    }
+
+    .overlay-text h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .overlay-text p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .right-side {
+      background-color: white;
+    }
+
+    .login-box {
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      padding-right: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-box h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: rgb(59, 144, 209);
+    }
+
+    .login-box p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: rgb(59, 144, 209); /* Corrected placement */
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input:active,
+    input:focus {
+      outline: 1px solid rgb(59, 144, 209);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .or-text {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .social-login {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .social-login button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #f8f9fa;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-login button i {
+      font-size: 1rem;
+      color: #007bff;
+    }
+    .social-login button:hover {
+      background-color: #e2e6ea;
+    }
+    .register-text {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .register-text a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .register-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <img
+        src="Solo-Travel-in-Nature-acbfea52bfaf.jpg"
+        alt="Travelista Tours"
+      />
+      <div class="overlay-text">
+        <h1>Travelista Tours</h1>
+        <p>
+          Travel is the only purchase that enriches you in ways beyond
+          material wealth
+        </p>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="login-box">
+        <h2>Welcome</h2>
+        <p>Login with Email</p>
+        <form>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" />
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+        <p class="or-text">OR</p>
+        <div class="social-login">
+          <button><i class="bi bi-google"></i></button>
+          <button><i class="bi bi-facebook"></i></button>
+          <button><i class="bi bi-apple"></i></button>
+        </div>
+        <p class="register-text">
+          Don't have an account? <a href="#">Register Now</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
