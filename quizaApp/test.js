@@ -12,7 +12,7 @@ const questions = [
 ];
 
 const questionElement = document.getElementById('question');
-const answerButtonsElement = document.querySelector('answer-buttons');
+const answerButtonsElement = document.querySelector('.answer-buttons');
 
 let currentQuestionIndex = 0;
 
@@ -72,3 +72,4 @@ function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
+10
