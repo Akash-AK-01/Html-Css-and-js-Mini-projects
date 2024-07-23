@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Box Design</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .message-box {
+      width: 300px;
+      background: linear-gradient(135deg, #fff2cc, #f9d423);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .message-header {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: #f9d423;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    .message-content {
+      margin-top: 50px;
+    }
+
+    .message-content h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .message-content input {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .message-buttons {
+      margin-top: 20px;
+    }
+
+    .message-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .message-buttons button:hover {
+      background-color: #e68900;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <div class="message-header">
+      <img src="user.webp" alt="User Icon" class="user-icon">
+    </div>
+    <div class="message-content">
+      <h2>Ask Me a Question</h2>
+      <input type="text" placeholder="Type something..." id="user-input">
+    </div>
+    <div class="message-buttons">
+      <button id="accept-btn">Accept</button>
+      <button id="decline-btn">Decline</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById("accept-btn").addEventListener("click", function() {
+      alert("You accepted: " + document.getElementById("user-input").value);
+    });
+
+    document.getElementById("decline-btn").addEventListener("click", function() {
+      alert("You declined.");
+    });
+  </script>
+</body>
+</html>
