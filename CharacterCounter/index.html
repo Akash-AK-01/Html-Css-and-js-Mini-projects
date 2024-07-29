@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Character Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+        .counter-container {
+            background-color: #ffccd5;
+            border-top: 30PX red;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            
+            height: 100px;
+            border: 2px solid #020101;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .count-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="counter-container">
+    <h2>Real-time Character Counter</h2>
+    <textarea id="myInput" oninput="countCharacters()" placeholder="Please write your text here..."></textarea>
+    <div class="count-display">
+        <span>Total Characters: <span id="charCount" style="color: PURPLE;">0</span></span>
+        <span>Remaining: <span id="charRemaining" style="color: rgb(204, 133, 0);">50</span></span>
+    </div>
+</div>
+
+<script>
+    const maxChars = 50;
+    
+    function countCharacters() {
+        const input = document.getElementById("myInput");
+        const charCount = document.getElementById("charCount");
+        const charRemaining = document.getElementById("charRemaining");
+
+        const currentLength = input.value.length;
+        charCount.innerHTML = currentLength;
+        charRemaining.innerHTML = maxChars - currentLength;
+    }
+</script>
+
+</body>
+</html>
