@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tip Calculator</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+ 
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Tip Calculator</h2>
+  <p>Enter the bill amount and tip percentage to calculate the total.</p>
+  <label for="bill">Bill amount:</label>
+  <input type="text" id="bill" name="bill"><br>
+
+  <label for="tip">Tip percentage:</label>
+  <input type="text" id="tip" name="tip"><br>
+
+  <button onclick="calculateTip()">CALCULATE</button>
+  <br>
+  <p>Total: <span id="total"></span></p>
+</div>
+
+<script>
+function calculateTip() {
+  var bill = parseFloat(document.getElementById("bill").value);
+  var tipPercentage = parseFloat(document.getElementById("tip").value) / 100;
+  var tip = bill * tipPercentage;
+  var total = bill + tip;
+  document.getElementById("total").innerHTML = total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
