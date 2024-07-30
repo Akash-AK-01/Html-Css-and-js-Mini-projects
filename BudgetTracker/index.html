@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            overflow: hidden;
+            background-color: #e6e6e6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #transaction-form {
+            background-color: #3366FF;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+        #transaction-form h2 {
+            text-align: center;
+            background-color: #3366FF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .form-control {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .form-control label {
+            flex: 1;
+            margin-right: 10px;
+            line-height: 30px;
+        }
+        .form-control select, .form-control input {
+            flex: 2;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        #add-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0044cc;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #transactions-table th, #transactions-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        #transactions-table th {
+            background-color: #3366FF;
+            color: white;
+        }
+        #transactions-table td {
+            background-color: #f9f9f9;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="transaction-form">
+            <h2>Add a new transaction:</h2>
+            <div class="form-control">
+                <label for="type">Type:</label>
+                <select id="type">
+                    <option value="choose">Choose one...</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-control">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount">
+            </div>
+            <button id="add-btn">Add to transactions</button>
+        </div>
+        <table id="transactions-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Income</td>
+                    <td>Salary</td>
+                    <td>$500</td>
+                    <td><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Expense</td>
+                    <td>Rent</td>
+                    <td>$100</td>
+                    <td><button class="delete-btn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('add-btn').addEventListener('click', function() {
+            const type = document.getElementById('type').value;
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+
+            if (type === 'choose' || name === '' || amount === '') {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const table = document.getElementById('transactions-table').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            const typeCell = newRow.insertCell(0);
+            const nameCell = newRow.insertCell(1);
+            const amountCell = newRow.insertCell(2);
+            const optionsCell = newRow.insertCell(3);
+
+            typeCell.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+            nameCell.textContent = name;
+            amountCell.textContent = '$' + parseFloat(amount).toFixed(2);
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.onclick = function() {
+                table.deleteRow(newRow.rowIndex - 1);
+            };
+            optionsCell.appendChild(deleteBtn);
+
+            // Clear the form
+            document.getElementById('type').value = 'choose';
+            document.getElementById('name').value = '';
+            document.getElementById('amount').value = '';
+        });
+
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const row = button.parentNode.parentNode;
+                row.remove();
+            });
+        });
+    </script>
+</body>
+</html>
