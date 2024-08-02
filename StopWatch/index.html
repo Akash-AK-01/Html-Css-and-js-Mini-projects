@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            background-image: url(https://c0.wallpaperflare.com/preview/30/963/643/accurate-alarm-alarm-clock-analogue.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main {
+            font-family: Arial, sans-serif;
+            background-color: #1a2b3c;
+            color: #fff;
+            text-align: center;
+            width: 30%;
+            min-height: 30vh;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stopwatch {
+            background-color: #e7e5e591;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .time {
+            font-size: 3em;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #ff5a5a;
+            transform: scale(1.1);
+        }
+        button:active {
+            transform: scale(0.1);
+        }
+         
+        .buttons button {
+            animation: fadeInOut 1s infinite;
+        }
+        #laps {
+            margin-top: 10px;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            box-sizing: border-box;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="stopwatch">
+            <div class="time" id="display">00 : 00 : 00</div>
+            <div class="buttons">
+                <button onclick="start()">Start</button>
+                <button onclick="lap()">Lap</button>
+                <button onclick="stop()">Stop</button>
+                <button onclick="reset()">Reset</button>
+            </div>
+            <div id="laps"></div>
+        </div>
+    </div>
+    <script>
+        let timer;
+        let startTime;
+        let lapCount = 1;
+
+        function start() {
+            if (!timer) {
+                startTime = Date.now();
+                timer = setInterval(updateTime, 1000);
+            }
+        }
+
+        function updateTime() {
+            const currentTime = Date.now() - startTime;
+            const hours = Math.floor(currentTime / 3600000);
+            const minutes = Math.floor((currentTime % 3600000) / 60000);
+            const seconds = Math.floor((currentTime % 60000) / 1000);
+            document.getElementById("display").textContent = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function lap() {
+            const lapTime = document.getElementById("display").textContent;
+            document.getElementById("laps").innerHTML += `Lap ${lapCount}: ${lapTime}<br>`;
+            lapCount++;
+        }
+
+        function stop() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function reset() {
+            clearInterval(timer);
+            timer = null;
+            document.getElementById("display").textContent = "00 : 00 : 00";
+            document.getElementById("laps").innerHTML = "";
+            lapCount = 1;
+        }
+    </script>
+</body>
+</html>
