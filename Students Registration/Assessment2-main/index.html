@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+<link rel="stylesheet" href="assement2.css" />
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="one">Student Registration</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="rollno">Roll No:</label>
+                <input type="text" id="rollno" name="rollno" required placeholder="Enter Roll No">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="dept">Department:</label>
+                <select id="dept" name="dept" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="ECE">Electronics and Communication</option>
+                    <option value="MECH">Mechanical Engineering</option>
+                    <option value="CIVIL">Civil Engineering</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="marks10">10th Marks:</label>
+                <input type="text" id="marks10" name="marks10" required placeholder="Enter 10th Marks">
+            </div>
+            <div class="form-group">
+                <label for="marks12">12th Marks:</label>
+                <input type="text" id="marks12" name="marks12" required placeholder="Enter 12th Marks">
+            </div>
+            <div class="form-group">
+                <label for="percentage">Degree Percentage:</label>
+                <input type="text" id="percentage" name="percentage" required placeholder="Enter Degree Percentage">
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="button" class="btn btn-cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
