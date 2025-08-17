@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c2a71;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo p {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.5s ease;
+    
+}
+header nav ul li a:hover {
+    transform: scale(1.1);
+    color: black;
+  }
+
+.banner {
+    background-image: url('Jellyfish.jpg');
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size:cover ;
+    padding: 50px 0;
+    text-align: center;
+    height: 98vh;
+}
+
+.upload-area p {
+    margin: 0;
+}
+
+.about-us, .services, .products, .contact-us {
+    padding: 20px;
+    text-align: center;
+}
+.init{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.init p{
+    max-width: 50vw;
+}
+h2 {
+    margin-top: 0;
+}
+
+.image   {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    max-width: 300px;
+    border: 20px;
+    border-radius: 30px;
+}
+.image-placeholder img{
+    max-width: 250px;
+    transition: 0.3s;
+}
+.image-placeholder img:hover{
+    transform: scale(1.1);
+}
+
+.service-images, .product-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+  
+
+}
+.products{
+    background-color: grey;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #3c2a71;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-us div{
+    display: flex;
+     justify-content: space-between;
+     width: 500px;
+}
+.bt {
+    margin-left: 10px;
+    display: flex;
+    width: 50px;    
+    justify-content:center;  
+    gap: 10px; 
+    margin-left: 300px;
+}
+.bt button {   
+    background-color: black;
+    color: white;
+    transition: 0.3s ;
+
+}
+.bt button:hover {
+    background-color: white;
+    color: black;
+   
+}
